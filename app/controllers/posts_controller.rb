@@ -5,6 +5,8 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
     p Rails.application.credentials.secret_key_base
+    @key = Rails.application.credentials.devise[:key]
+    p @key
   end
 
   # GET /posts/1 or /posts/1.json
